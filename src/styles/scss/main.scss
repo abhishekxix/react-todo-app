@@ -1,0 +1,115 @@
+@import "../normalize.css";
+
+
+body {
+	background-color: #f8f8f8;
+	font-size: 16px;
+	font-family: sans-serif, serif;
+	line-height: 24px;
+	overflow: hidden;
+
+	#root {
+		height: 100dvh;
+		display: flex;
+		flex-direction: column;
+		padding-top: 40px;
+		align-items: center;
+		padding-inline: 15px;
+
+		#todo-app {
+			max-height: 800px;
+			height: 80%;
+			width: 100%;
+			max-width: 600px;
+			background-color: #fff;
+			border: solid #0000002a 0.5px;
+			padding: 10px;
+			position: relative;
+
+			h1 {
+				line-height: 40px;
+				font-size: 32px;
+				font-weight: 600;
+			}
+
+			.app-heading {
+				text-align: center;
+			}
+
+			.add-todo-item {
+				position: absolute;
+				bottom: 10px;
+				width: calc(100% - 20px);
+				display: flex;
+				justify-content: space-between;
+
+				input {
+					width: 80%;
+					line-height: 40px;
+					padding-inline: 10px;
+					border-right: none;
+					outline: none;
+				}
+
+				button {
+					width: 20%;
+					background-color: #307734;
+					color: #fff;
+					border: none;
+					outline: none;
+
+					&.invalid-input {
+						background-color: #f00;
+					}
+				}
+			}
+
+			.todolist {
+				overflow-y: auto;
+				max-height: calc(100% - 150px);
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				padding-inline: 20px;
+
+				.todo-item {
+					padding-inline: 30px;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: space-between;
+					gap: 15px;
+					border: solid 1px #000;
+					padding-block: 15px;
+
+					input {
+						width: 304px;
+						line-height: 40px;
+						border-width: 1px;
+					}
+
+					p {
+						margin: 0;
+						line-height: 40px;
+						padding-block: 1px;
+						width: 304px;
+					}
+
+					&--done {
+
+						p {
+							color: #f00;
+							text-decoration: line-through;
+						}
+					}
+
+					button {
+						background-color: transparent;
+						border: none;
+					}
+				}
+			}
+		}
+
+	}
+}
